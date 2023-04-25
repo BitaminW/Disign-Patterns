@@ -13,5 +13,7 @@ private:
 	std::unique_ptr<Strategy> strategy_;
 
 public:
-	explicit Context(std::unique_ptr<Strategy>&& strategy = {}) : strategy_(std::move(strategy))
+	explicit Context(std::unique_ptr<Strategy>&& strategy = {}) : strategy_(std::move(strategy)) {
+
+	}
 };
