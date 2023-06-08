@@ -12,6 +12,12 @@ public:
 	virtual void VisitConcreteComponentB(const ConcreteComponentB* element) const = 0;
 
 };
+
+class Component {
+ public:
+  virtual ~Component() {}
+  virtual void Accept(Visitor *visitor) const = 0;
+};
 	
 
 
