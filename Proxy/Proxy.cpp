@@ -1,12 +1,11 @@
 #include <iostream>
 
-// 인터페이스
 class ISubject {
 public:
 	virtual void Request() const = 0;
 };
 
-class Subject : ISubject{
+class Subject : public ISubject{
 public:
 	void Request() const override {
 		std::cout << "Subject: Handling request.\n";
@@ -48,7 +47,7 @@ void ClientCode(const ISubject& subject) {
 
 int main() {
 	std::cout << "Client: Executing the client code with a real subject:\n";
-	Subject* subject = new Subject;
+	Subject* subject = new Subject{};
 	ClientCode(*subject);
 
 	std::cout << "\n";
@@ -62,4 +61,3 @@ int main() {
 
 	return 0;
 }
-
