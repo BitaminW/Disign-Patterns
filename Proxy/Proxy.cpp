@@ -1,5 +1,6 @@
 #include <iostream>
 
+// 인터페이스
 class ISubject {
 public:
 	virtual void Request() const = 0;
